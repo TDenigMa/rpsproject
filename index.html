@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>
+            Rock, Paper, Scissors
+        </title>
+        
+    </header>
+    <body>
+
+    </body>
+    <script>
+        let options = ["Rock", "Paper", "Scissors"];
+        let loseCount = 0;
+        let winCount = 0;
+        let tieCount = 0;
+
+        function computerPlay() {
+            return options[Math.floor(Math.random()*options.length)];
+        }
+
+        function capitalize (str) {
+            let lowerCase = str.toLowerCase();
+            return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
+        }
+
+        function playerPlay () {
+            while (true) {
+            let choice = capitalize(prompt("Rock, Paper or Scissors?"));
+            if (choice === "Rock" || choice === "Paper" || choice === "Scissors") {
+            return choice;
+            } 
+            alert("Please pick one of the 3 choices for the game");
+        }}
+
+        function playRound (playerSelection, computerSelection) {
+            if ((playerSelection === "Rock" && computerSelection === "Paper") ||
+               (playerSelection === "Paper" && computerSelection === "Scissors") ||
+               (playerSelection === "Scissors" && computerSelection === "Rock")) {
+                    loseCount++
+                    return "You Lose! "+ computerSelection + " beats " + playerSelection;
+            } else if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
+                      (playerSelection == "Scissors" && computerSelection == "Paper") ||
+                      (playerSelection == "Paper" && computerSelection == "Rock")) {
+                          winCount++
+                          return "You Win! " + playerSelection + " beats " + computerSelection;
+            } else {
+                tieCount++
+                return "It's a tie! Both picked " + computerSelection;
+            }
+        }
+    
+        function game () {
+            let i;
+            for (i=0; i<5; i++) {
+                console.log(playRound (playerPlay(), computerPlay()))
+            }
+            if (loseCount > winCount) {
+                return "You lost! The final score was " + winCount + ":" + loseCount + ":" + tieCount;
+            } else if (winCount > loseCount) {
+                return "You win! The final score was " + winCount + ":" + loseCount + ":" + tieCount;
+            } else {
+                return "It's a tie! The final score was " + winCount + ":" + loseCount + ":" + tieCount;
+            }
+        }
+        console.log(game());
+
+
+    </script>
+</html>
