@@ -8,12 +8,6 @@ function computerPlay() {
     return options[Math.floor(Math.random()*options.length)];
 }
 
-function capitalize (str) {
-    let lowerCase = str.toLowerCase();
-    return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
-}
-
-
 function playRound (playerSelection, computerSelection) {
     if ((playerSelection === "Rock" && computerSelection === "Paper") ||
        (playerSelection === "Paper" && computerSelection === "Scissors") ||
