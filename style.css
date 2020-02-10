@@ -1,0 +1,29 @@
+body{
+    background-image: url(https://pxt.azureedge.net/blob/68f66c3ddc3acfc4c53157abf92eace202d46db2/static/courses/csintro/conditionals/rock-paper-scissors-items.png);
+}
+
+#game {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+    height: 60px;
+}
+
+#buttons {
+    max-width: 1350px;
+    margin: auto;
+    text-align: center;
+}
+
+.rock, .paper, .scissors {
+    width: 372px;
+    height: 522px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.reset {
+    margin 35px;
+    width: 25%;
+    height: 25%;
+}
